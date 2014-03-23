@@ -18,7 +18,7 @@ function handler (req, res) {
 }
 
 io.sockets.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
+  socket.emit('connect', { message: "connected to socket server" });
   socket.on("forward", function (e) {
     console.log("FORWARD", e)
   });
