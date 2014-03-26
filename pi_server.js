@@ -5,6 +5,6 @@ socket.on("connect", function (message) {
   console.log("Connected to server.", message);
 });
 
-socket.on('forward', function(e) {
+socket.on("forward", function(e) {
   console.log("FORWARD", e)
 });

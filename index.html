@@ -2,13 +2,13 @@
     <head>
         <script src="/socket.io/socket.io.js"></script>
         <script>
-          var socket = io.connect('http://localhost');
-          socket.on('connect', function (data) {
+          var socket = io.connect("http://localhost");
+          socket.on("connect", function (data) {
             console.log(data);
-            socket.emit('my other event', { my: 'data' });
+            socket.emit("my other event", { my: "data" });
           });
           function handleForwardClick() {
-            socket.emit('forward', { direction: 'FORWARD' });
+            socket.emit("forward", { direction: "FORWARD" });
           }
         </script>
     </head>
