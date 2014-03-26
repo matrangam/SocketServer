@@ -7,12 +7,15 @@
             console.log(data);
             socket.emit("my other event", { my: "data" });
           });
-          function handleForwardClick() {
-            socket.emit("forward", { direction: "FORWARD" });
+          function handleForwardMouseDown() {
+            socket.emit("forward", { action: "BEGIN" });
+          }
+          function handleForwardMouseUp() {
+            socket.emit("forward", { action: "END" });
           }
         </script>
     </head>
     <body>
-        <button onclick="handleForwardClick()">FORWARD</button>
+        <button onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()">FORWARD</button>
     </body>
 </html>
