@@ -12,6 +12,5 @@ io.sockets.on("connection", function (socket) {
   socket.emit("connect", {message: "SocketServer at your service."});
   socket.on("forward", function (e) {
     socket.broadcast.emit("forward", e);
-    console.log("FORWARD", e)
   });
 });
