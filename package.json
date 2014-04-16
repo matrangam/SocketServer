@@ -2,6 +2,7 @@
   "name": "SocketServer",
   "version": "0.0.0",
   "description": "A node js socket server for a raspberry pi based robot.",
+  "main": "server.js",
   "author": {
     "name": "Michael Matranga",
     "email": "mike@dmgctrl.com"
@@ -13,13 +14,12 @@
     }
   ],
   "private": true,
-  "devDependencies": {
-    "socket.io": "~0.9",
-    "socket.io-client": "~0.9",
-    "express": "~3"
-  },
   "engines": {
     "node": "0.10.5"
+  },
+  "dependencies": {
+    "express": "~4.0.0",
+    "socket.io": "~0.9.16",
+    "socket.io-client": "~0.9.16"
   }
 }
-
