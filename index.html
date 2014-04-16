@@ -2,7 +2,7 @@
     <head>
         <script src="/socket.io/socket.io.js"></script>
         <script>
-          var socket = io.connect("http://vast-cove-8394.herokuapp.com");
+          var socket = io.connect("/");
           socket.on("connect", function (data) {
             console.log(data);
             socket.emit("my other event", { my: "data" });
