@@ -2,7 +2,7 @@
     <head>
         <script src="/socket.io/socket.io.js"></script>
         <script>
-          var socket = io.connect("http://54.208.57.94");
+          var socket = io.connect("http://localhost");
           socket.on("connect", function (data) {
             console.log(data);
             socket.emit("my other event", { my: "data" });
