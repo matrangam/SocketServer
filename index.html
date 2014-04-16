@@ -7,6 +7,9 @@
             console.log(data);
             socket.emit("my other event", { my: "data" });
           });
+          socket.on("forward", function (data) {
+            console.log(data);
+          });
           function handleForwardMouseDown() {
             socket.emit("forward", { action: "BEGIN" });
           }
