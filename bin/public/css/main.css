@@ -1,0 +1,88 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#control-surface {
+  position: relative;
+  margin: auto;
+  width: 350px;
+
+}
+
+.top-left {
+  position: absolute;
+  top: 50;
+  left: 50;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 75px 75px 0 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+.top-center {
+  position: absolute;
+  left: 125;
+  border-style: solid;
+  border-width: 0 50px 50px 50px;
+  border-color: transparent transparent #007bff transparent;
+}
+
+.top-right {
+  position: absolute;
+  left: 225;
+  top: 50;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 75px 75px 0;
+  border-color: transparent #007bff transparent transparent;
+}
+
+#bottom {
+  position: absolute;
+  top: 125;
+}
+
+.bottom-left {
+  position: absolute;
+  left: 50;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 75px 0 0 75px;
+  border-color: transparent transparent transparent #007bff;
+}
+
+.bottom-center {
+  position: absolute;
+  top: 75;
+  left: 125;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 50px 50px 0 50px;
+  border-color: #007bff transparent transparent transparent;
+}
+
+.bottom-right {
+  position: absolute;
+  left: 225;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 0 75px 75px;
+  border-color: transparent transparent #007bff transparent;
+}
+
+#center {
+  position: absolute;
+  left: 125;
+  top: 50;
+  width: 30px;
+  height: 80px;
+  border-style: solid;
+  border-width: 35px;
+  border-color: red;
+}
