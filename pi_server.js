@@ -1,5 +1,5 @@
 var io = require("socket.io-client")
-var socket = io.connect("http://54.84.180.130");
+var socket = io.connect("http://vast-cove-8394.herokuapp.com");
 
 socket.on("connect", function (message) {
   console.log("Connected to server.", message);
