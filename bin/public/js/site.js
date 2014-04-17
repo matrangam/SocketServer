@@ -1,83 +1,71 @@
 (function() {
   Zepto((function(_this) {
     return function($) {
-      var socket, _goBackward, _goBackwardLeft, _goBackwardRight, _goForward, _goForwardLeft, _goForwardRight, _stopBackward, _stopBackwardLeft, _stopBackwardRight, _stopForward, _stopForwardLeft, _stopForwardRight;
+      var socket;
       socket = io.connect("/");
       socket.on("connect", function(data) {
         return console.log(data);
       });
-      _goForwardLeft = function() {
+      $(".top-left").on("mouseenter", function() {
         return socket.emit("forward-left", {
           action: "BEGIN"
         });
-      };
-      _stopForwardLeft = function() {
+      });
+      $(".top-left").on("mouseout", function() {
         return socket.emit("forward-left", {
           action: "END"
         });
-      };
-      $(".top-left").on("mouseenter", _goForwardLeft);
-      $(".top-left").on("mouseout", _stopForwardLeft);
-      _goForward = function() {
+      });
+      $(".top-center").on("mouseenter", function() {
         return socket.emit("forward", {
           action: "BEGIN"
         });
-      };
-      _stopForward = function() {
+      });
+      $(".top-center").on("mouseout", function() {
         return socket.emit("forward", {
           action: "END"
         });
-      };
-      $(".top-center").on("mouseenter", _goForward);
-      $(".top-center").on("mouseout", _stopForward);
-      _goForwardRight = function() {
+      });
+      $(".top-right").on("mouseenter", function() {
         return socket.emit("forward-right", {
           action: "BEGIN"
         });
-      };
-      _stopForwardRight = function() {
+      });
+      $(".top-right").on("mouseout", function() {
         return socket.emit("forward-right", {
           action: "END"
         });
-      };
-      $(".top-right").on("mouseenter", _goForwardRight);
-      $(".top-right").on("mouseout", _stopForwardRight);
-      _goBackwardLeft = function() {
+      });
+      $(".bottom-left").on("mouseenter", function() {
         return socket.emit("backward-left", {
           action: "BEGIN"
         });
-      };
-      _stopBackwardLeft = function() {
+      });
+      $(".bottom-left").on("mouseout", function() {
         return socket.emit("backward-left", {
           action: "END"
         });
-      };
-      $(".bottom-left").on("mouseenter", _goBackwardLeft);
-      $(".bottom-left").on("mouseout", _stopBackwardLeft);
-      _goBackward = function() {
+      });
+      $(".bottom-center").on("mouseenter", function() {
         return socket.emit("backward", {
           action: "BEGIN"
         });
-      };
-      _stopBackward = function() {
+      });
+      $(".bottom-center").on("mouseout", function() {
         return socket.emit("backward", {
           action: "END"
         });
-      };
-      $(".bottom-center").on("mouseenter", _goBackward);
-      $(".bottom-center").on("mouseout", _stopBackward);
-      _goBackwardRight = function() {
+      });
+      $(".bottom-right").on("mouseenter", function() {
         return socket.emit("backward-right", {
           action: "BEGIN"
         });
-      };
-      _stopBackwardRight = function() {
+      });
+      return $(".bottom-right").on("mouseout", function() {
         return socket.emit("backward-right", {
           action: "END"
         });
-      };
-      $(".bottom-right").on("mouseenter", _goBackwardRight);
-      return $(".bottom-right").on("mouseout", _stopBackwardRight);
+      });
     };
   })(this));
 
