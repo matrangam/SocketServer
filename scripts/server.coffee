@@ -16,4 +16,19 @@ io.sockets.on("connection", (socket) ->
   socket.on("forward", (e) ->
     socket.broadcast.emit("forward", e)
   )
+  socket.on("forward-left", (e) ->
+    socket.broadcast.emit("forward-left", e)
+  )
+  socket.on("forward-right", (e) ->
+    socket.broadcast.emit("forward-right", e)
+  )
+  socket.on("backward", (e) ->
+    socket.broadcast.emit("backward", e)
+  )
+  socket.on("backward-left", (e) ->
+    socket.broadcast.emit("backward-left", e)
+  )
+  socket.on("backward-right", (e) ->
+    socket.broadcast.emit("backward-right", e)
+  )
 )

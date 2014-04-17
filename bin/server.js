@@ -21,8 +21,23 @@
     socket.emit("connect", {
       message: "SocketServer at your service."
     });
-    return socket.on("forward", function(e) {
+    socket.on("forward", function(e) {
       return socket.broadcast.emit("forward", e);
+    });
+    socket.on("forward-left", function(e) {
+      return socket.broadcast.emit("forward-left", e);
+    });
+    socket.on("forward-right", function(e) {
+      return socket.broadcast.emit("forward-right", e);
+    });
+    socket.on("backward", function(e) {
+      return socket.broadcast.emit("backward", e);
+    });
+    socket.on("backward-left", function(e) {
+      return socket.broadcast.emit("backward-left", e);
+    });
+    return socket.on("backward-right", function(e) {
+      return socket.broadcast.emit("backward-right", e);
     });
   });
 
