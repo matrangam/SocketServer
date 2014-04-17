@@ -24,8 +24,8 @@ Zepto(($) =>
 
 
 
-  _goBackwardLeft = () -> socket.emit("bottom-left", { action: "BEGIN" })
-  _stopBackwardLeft = () -> socket.emit("bottom-left", { action: "END" })
+  _goBackwardLeft = () -> socket.emit("backward-left", { action: "BEGIN" })
+  _stopBackwardLeft = () -> socket.emit("backward-left", { action: "END" })
 
   $(".bottom-left").on("mouseenter", _goBackwardLeft)
   $(".bottom-left").on("mouseout", _stopBackwardLeft)
@@ -36,8 +36,8 @@ Zepto(($) =>
   $(".bottom-center").on("mouseenter", _goBackward)
   $(".bottom-center").on("mouseout", _stopBackward)
 
-  _goBackwardRight = () -> socket.emit("bottom-right", { action: "BEGIN" })
-  _stopBackwardRight = () -> socket.emit("bottom-right", { action: "END" })
+  _goBackwardRight = () -> socket.emit("backward-right", { action: "BEGIN" })
+  _stopBackwardRight = () -> socket.emit("backward-right", { action: "END" })
 
   $(".bottom-right").on("mouseenter", _goBackwardRight)
   $(".bottom-right").on("mouseout", _stopBackwardRight)

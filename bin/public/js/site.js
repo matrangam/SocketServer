@@ -43,12 +43,12 @@
       $(".top-right").on("mouseenter", _goForwardRight);
       $(".top-right").on("mouseout", _stopForwardRight);
       _goBackwardLeft = function() {
-        return socket.emit("bottom-left", {
+        return socket.emit("backward-left", {
           action: "BEGIN"
         });
       };
       _stopBackwardLeft = function() {
-        return socket.emit("bottom-left", {
+        return socket.emit("backward-left", {
           action: "END"
         });
       };
@@ -67,12 +67,12 @@
       $(".bottom-center").on("mouseenter", _goBackward);
       $(".bottom-center").on("mouseout", _stopBackward);
       _goBackwardRight = function() {
-        return socket.emit("bottom-right", {
+        return socket.emit("backward-right", {
           action: "BEGIN"
         });
       };
       _stopBackwardRight = function() {
-        return socket.emit("bottom-right", {
+        return socket.emit("backward-right", {
           action: "END"
         });
       };
