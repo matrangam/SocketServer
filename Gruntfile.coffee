@@ -13,7 +13,7 @@ module.exports = (grunt) ->
     coffee:
       compile:
         files:
-          "server.js": "scripts/server.coffee"
+          "bin/server.js": "scripts/server.coffee"
 
     watch:
       options:
