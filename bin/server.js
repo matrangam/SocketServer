@@ -11,7 +11,7 @@
 
   server.listen((_ref = process.env.PORT) != null ? _ref : 5000);
 
-  app.use(express["static"]("" + __dirname + "/css"));
+  app.use(express["static"]("" + __dirname + "/public"));
 
   app.get("/", function(req, res) {
     return res.sendfile("" + __dirname + "/index.html");

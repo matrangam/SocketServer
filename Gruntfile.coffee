@@ -14,15 +14,14 @@ module.exports = (grunt) ->
       compile:
         files:
           "bin/server.js": "scripts/server.coffee"
+          "bin/public/js/site.js": "scripts/site.coffee"
 
     watch:
       options:
         spawn: false
 
       coffee:
-        files: [
-          "scripts/server.coffee"
-        ]
+        files: ["scripts/*.coffee"]
         tasks: ["coffee_src", "express:dev"]
 
     express:

@@ -1,35 +1,22 @@
 <html>
     <head>
         <script src="/socket.io/socket.io.js"></script>
-        <script>
-          var socket = io.connect("/");
-          socket.on("connect", function (data) {
-            console.log(data);
-          });
-          function handleForwardMouseDown() {
-            socket.emit("forward", { action: "BEGIN" });
-          }
-          function handleForwardMouseUp() {
-            socket.emit("forward", { action: "END" });
-          }
-        </script>
-        <link type="text/css" rel="stylesheet" href="/main.css">
+        <script src="/js/vendor/zepto1.1.3.js"></script>
+        <script src="/js/site.js"></script>
+        <link type="text/css" rel="stylesheet" href="/css/main.css">
     </head>
     <body>
         <div id="control-surface">
           <div id="top">
-            <div class="top-left" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
-            <div class="top-center" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
-            <div class="top-right" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+            <div class="top-left"></div>
+            <div class="top-center"></div>
+            <div class="top-right"></div>
           </div>
-          <div id="middle">
-            <div class="left" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
-            <div class="right" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
-          </div>
+          <div id="center"></div>
           <div id="bottom">
-            <div class="bottom-left" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
-            <div class="bottom-center" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
-            <div class="bottom-right" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+            <div class="bottom-right"></div>
+            <div class="bottom-center"></div>
+            <div class="bottom-left"></div>
           </div>
         </div>
     </body>
