@@ -1,8 +1,11 @@
 module.exports = (grunt) ->
   grunt.loadNpmTasks("grunt-contrib-coffee")
   grunt.loadNpmTasks("grunt-contrib-watch")
+  grunt.loadNpmTasks("grunt-express-server")
 
-  grunt.registerTask("xxx", ["coffee:compile"])
+  grunt.registerTask("coffee_src", ["coffee:compile"])
+  grunt.registerTask("server", ["coffee_src", "express:dev", "watch"])
+  grunt.registerTask("default", ["server"])
 
   grunt.initConfig(
     pkg: grunt.file.readJSON("package.json")
@@ -20,5 +23,12 @@ module.exports = (grunt) ->
         files: [
           "scripts/server.coffee"
         ]
-        tasks: ["xxx"]
+        tasks: ["coffee_src", "express:dev"]
+
+    express:
+      dev:
+        options:
+          port: 5000
+          script: "server.js"
+
   )
