@@ -22,5 +22,11 @@
     "express": "~4.0.0",
     "socket.io": "~0.9.16",
     "socket.io-client": "~0.9.16"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-coffee": "~0.10.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-express-server": "~0.4.13"
   }
 }

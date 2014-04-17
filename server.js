@@ -1,16 +1,25 @@
-var app = require("express")()
-  , server = require("http").createServer(app)
-  , io = require("socket.io").listen(server);
+(function() {
+  var app, io, server, _ref;
 
-server.listen(process.env.PORT || 5000);
+  app = require("express")();
 
-app.get("/", function (req, res) {
-  res.sendfile(__dirname + "/index.html");
-});
+  server = require("http").createServer(app);
 
-io.sockets.on("connection", function (socket) {
-  socket.emit("connect", {message: "SocketServer at your service."});
-  socket.on("forward", function (e) {
-    socket.broadcast.emit("forward", e);
+  io = require("socket.io").listen(server);
+
+  server.listen((_ref = process.env.PORT) != null ? _ref : 5000);
+
+  app.get("/", function(req, res) {
+    return res.sendfile(__dirname + "/index.html");
   });
-});
+
+  io.sockets.on("connection", function(socket) {
+    socket.emit("connect", {
+      message: "SocketServer at your service."
+    });
+    return socket.on("forward", function(e) {
+      return socket.broadcast.emit("forward", e);
+    });
+  });
+
+}).call(this);
