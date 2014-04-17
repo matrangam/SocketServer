@@ -13,8 +13,24 @@
             socket.emit("forward", { action: "END" });
           }
         </script>
+        <link type="text/css" rel="stylesheet" href="/main.css">
     </head>
     <body>
-        <button onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()">FORWARD</button>
+        <div id="control-surface">
+          <div id="top">
+            <div class="top-left" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+            <div class="top-center" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+            <div class="top-right" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+          </div>
+          <div id="middle">
+            <div class="left" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+            <div class="right" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+          </div>
+          <div id="bottom">
+            <div class="bottom-left" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+            <div class="bottom-center" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+            <div class="bottom-right" onmouseup="handleForwardMouseUp()" onmousedown="handleForwardMouseDown()"></div>
+          </div>
+        </div>
     </body>
 </html>

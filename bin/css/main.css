@@ -1,0 +1,104 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+#control-surface {
+  position: relative;
+  margin: auto;
+  width: 500px;
+}
+
+.top-left {
+  position: absolute;
+  top: 100;
+  left: 100;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 100px 100px 0 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+.top-center {
+  position: absolute;
+  left: 200;
+
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 50px 100px 50px;
+  border-color: transparent transparent #007bff transparent;
+}
+
+.top-right {
+  position: absolute;
+  left: 300;
+  top: 100;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 100px 100px 0;
+  border-color: transparent #007bff transparent transparent;
+}
+
+#middle {
+  position: absolute;
+  top: 200;
+}
+
+.left {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 50px 100px 50px 0;
+  border-color: transparent #007bff transparent transparent;
+}
+
+.right {
+  position: absolute;
+  left: 400;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 50px 0 50px 100px;
+  border-color: transparent transparent transparent #007bff;
+}
+
+#bottom {
+  position: absolute;
+  top: 300;
+}
+
+.bottom-left {
+  position: absolute;
+  left: 100;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 100px 0 0 100px;
+  border-color: transparent transparent transparent #007bff;
+}
+
+.bottom-center {
+  position: absolute;
+  top: 100;
+  left: 200;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 100px 50px 0 50px;
+  border-color: #007bff transparent transparent transparent;
+}
+
+.bottom-right {
+  position: absolute;
+  left: 300;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 0 100px 100px;
+  border-color: transparent transparent #007bff transparent;
+}
+

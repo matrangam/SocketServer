@@ -29,6 +29,6 @@ module.exports = (grunt) ->
       dev:
         options:
           port: 5000
-          script: "server.js"
+          script: "bin/server.js"
 
   )

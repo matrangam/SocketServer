@@ -1,7 +1,9 @@
 (function() {
-  var app, io, server, _ref;
+  var app, express, io, server, _ref;
 
-  app = require("express")();
+  express = require("express");
+
+  app = express();
 
   server = require("http").createServer(app);
 
@@ -9,8 +11,10 @@
 
   server.listen((_ref = process.env.PORT) != null ? _ref : 5000);
 
+  app.use(express["static"]("" + __dirname + "/css"));
+
   app.get("/", function(req, res) {
-    return res.sendfile(__dirname + "/index.html");
+    return res.sendfile("" + __dirname + "/index.html");
   });
 
   io.sockets.on("connection", function(socket) {
