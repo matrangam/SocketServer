@@ -45,13 +45,13 @@ socket.on("backward-right", function(e) {
 socket.on("forward-left", function(e) {
   if (e.action === "BEGIN") {action = 1}
   if (e.action === "END") {action = 0}
-  gpio.write(15, action)
+  gpio.write(16, action)
 });
 
 socket.on("backward", function(e) {
   if (e.action === "BEGIN") {action = 1}
   if (e.action === "END") {action = 0}
-  gpio.write(16, action)
+  gpio.write(15, action)
 });
 
 socket.on("backward-left", function(e) {
