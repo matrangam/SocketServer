@@ -4,9 +4,6 @@ var gpio = require("pi-gpio")
 
 socket.on("connect", function (message) {
   console.log("Connected to server.", message);
-  gpio.getDirection(11, function (error, value) {
-    console.log("SON: " + error + " -- " + value)
-  });
   gpio.open(11, "output", function(err) {
     console.log("ERROR: " + err)
   });
