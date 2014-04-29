@@ -13,6 +13,15 @@ socket.on("connect", function (message) {
   gpio.open(12, "output", function(err) {
     console.log("ERROR: " + err)
   });
+  gpio.open(15, "output", function(err) {
+    console.log("ERROR: " + err)
+  });
+  gpio.open(16, "output", function(err) {
+    console.log("ERROR: " + err)
+  });
+  gpio.open(18, "output", function(err) {
+    console.log("ERROR: " + err)
+  });
 });
 
 socket.on("forward", function(e) {
@@ -33,18 +42,20 @@ socket.on("forward-right", function(e) {
   gpio.write(12, action)
 });
 
-socket.on("backward-right", function(e) {
-  console.log("FORWARD-RIGHT", e)
-});
-
 socket.on("backward", function(e) {
-  console.log("BACKWARD", e)
+  if (e.action === "BEGIN") {action = 1}
+  if (e.action === "END") {action = 0}
+  gpio.write(15, action)
 });
 
 socket.on("backward-left", function(e) {
-  console.log("BACKWARD-LEFT", e)
+  if (e.action === "BEGIN") {action = 1}
+  if (e.action === "END") {action = 0}
+  gpio.write(16, action)
 });
 
 socket.on("backward-right", function(e) {
-  console.log("BACKWARD-RIGHT", e)
+  if (e.action === "BEGIN") {action = 1}
+  if (e.action === "END") {action = 0}
+  gpio.write(18, action)
 });
