@@ -45,17 +45,17 @@ socket.on("forward-right", function(e) {
 socket.on("backward", function(e) {
   if (e.action === "BEGIN") {action = 1}
   if (e.action === "END") {action = 0}
-  gpio.write(15, action)
+  gpio.write(16, action)
 });
 
 socket.on("backward-left", function(e) {
   if (e.action === "BEGIN") {action = 1}
   if (e.action === "END") {action = 0}
-  gpio.write(16, action)
+  gpio.write(18, action)
 });
 
 socket.on("backward-right", function(e) {
   if (e.action === "BEGIN") {action = 1}
   if (e.action === "END") {action = 0}
-  gpio.write(18, action)
+  gpio.write(15, action)
 });
