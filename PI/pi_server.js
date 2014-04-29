@@ -11,7 +11,7 @@ socket.on("forward", function(e) {
   if (e.action === "END") {action = 0}
   gpio.open(11, "output", function(err) {
     console.log("ERROR: " + err)
-    gpio.write(11, action, function() {gpio.close(11)})
+    gpio.write(11, action)
   });
 });
 
@@ -20,7 +20,7 @@ socket.on("forward-left", function(e) {
   if (e.action === "END") {action = 0}
   gpio.open(13, "output", function(err) {
     console.log("ERROR: " + err)
-    gpio.write(13, action, function() {gpio.close(13)})
+    gpio.write(13, action)
   });
 });
 
@@ -29,7 +29,7 @@ socket.on("forward-right", function(e) {
   if (e.action === "END") {action = 0}
   gpio.open(12, "output", function(err) {
     console.log("ERROR: " + err)
-    gpio.write(12, action, function() {gpio.close(12)})
+    gpio.write(12, action)
   });
 });
 
