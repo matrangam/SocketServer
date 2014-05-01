@@ -1,7 +1,7 @@
 var io = require("socket.io-client")
 var socket = io.connect("http://vast-cove-8394.herokuapp.com");
 var gpio = require("pi-gpio")
-
+var activePort = null
 socket.on("connect", function (message) {
   console.log("Connected to server.", message);
   gpio.open(11, "output", function(err) {
@@ -25,7 +25,9 @@ socket.on("connect", function (message) {
 });
 
 socket.on("action", function(e) {
-  lastActivePort = activePort
+  if (activePort !== null) {
+    lastActivePort = activePort
+  }
   if (e.action === "forward") {
     activePort = 11
   }
@@ -45,7 +47,9 @@ socket.on("action", function(e) {
     activePort = 16
   }
 
-  gpio.write(lastActivePort, 0)
+  if (activePort !== null) {
+    gpio.write(lastActivePort, 0)
+  }
   gpio.write(activePort, 0)
 
 });
