@@ -25,23 +25,27 @@ socket.on("connect", function (message) {
 });
 
 socket.on("action", function(e) {
-  console.log("SON -> ", e.action)
-  // if (e.action === "forward") {
-  //   gpio.write(11, 1)
-  // }
-  // if (e.action === "forward-right") {
-  //   gpio.write(12, 1)
-  // }
-  // if (e.action === "backward-right") {
-  //   gpio.write(13, 1)
-  // }
-  // if (e.action === "forward-left") {
-  //   gpio.write(18, 1)
-  // }
-  // if (e.action === "backward") {
-  //   gpio.write(15, 1)
-  // }
-  // if (e.action === "backward-left") {
-  //   gpio.write(16, 1)
-  // }
+  lastActivePort = activePort
+  if (e.action === "forward") {
+    activePort = 11
+  }
+  if (e.action === "forward-right") {
+    activePort = 12
+  }
+  if (e.action === "backward-right") {
+    activePort = 13
+  }
+  if (e.action === "forward-left") {
+    activePort = 18
+  }
+  if (e.action === "backward") {
+    activePort = 15
+  }
+  if (e.action === "backward-left") {
+    activePort = 16
+  }
+
+  gpio.write(lastActivePort, 0)
+  gpio.write(activePort, 0)
+
 });
