@@ -47,7 +47,7 @@ socket.on("action", function(e) {
     activePort = 16
   }
 
-  if (activePort !== null) {
+  if (lastActivePort !== null) {
     gpio.write(lastActivePort, 0)
   }
   gpio.write(activePort, 0)
