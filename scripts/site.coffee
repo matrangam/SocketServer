@@ -4,49 +4,24 @@ Zepto(($) =>
     console.log(data)
   )
 
-
   $(".top-left").on("mouseenter", () ->
-    socket.emit("forward-left", { action: "BEGIN" })
+    socket.emit("action", {action: "forward-left"})
   )
-  $(".top-left").on("mouseout", () ->
-    socket.emit("forward-left", { action: "END" })
-  )
-
   $(".top-center").on("mouseenter", () ->
-    socket.emit("forward", { action: "BEGIN" })
+    socket.emit("action", {action: "forward"})
   )
-  $(".top-center").on("mouseout", () ->
-    socket.emit("forward", { action: "END" })
-  )
-
   $(".top-right").on("mouseenter", () ->
-    socket.emit("forward-right", { action: "BEGIN" })
+    socket.emit("action", {action: "forward-right"})
   )
-  $(".top-right").on("mouseout", () ->
-    socket.emit("forward-right", { action: "END" })
-  )
-
 
 
   $(".bottom-left").on("mouseenter", () ->
-    socket.emit("backward-left", { action: "BEGIN" })
+    socket.emit("action", {action: "backward-left"})
   )
-  $(".bottom-left").on("mouseout", () ->
-    socket.emit("backward-left", { action: "END" })
-  )
-
   $(".bottom-center").on("mouseenter", () ->
-    socket.emit("backward", { action: "BEGIN" })
+    socket.emit("action", {action: "backward"})
   )
-  $(".bottom-center").on("mouseout", () ->
-    socket.emit("backward", { action: "END" })
-  )
-
   $(".bottom-right").on("mouseenter", () ->
-    socket.emit("backward-right", { action: "BEGIN" })
+    socket.emit("action", {action: "backward-right"})
   )
-  $(".bottom-right").on("mouseout", () ->
-    socket.emit("backward-right", { action: "END" })
-  )
-
 )
