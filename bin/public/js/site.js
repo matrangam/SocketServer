@@ -7,63 +7,33 @@
         return console.log(data);
       });
       $(".top-left").on("mouseenter", function() {
-        return socket.emit("forward-left", {
-          action: "BEGIN"
-        });
-      });
-      $(".top-left").on("mouseout", function() {
-        return socket.emit("forward-left", {
-          action: "END"
+        return socket.emit("action", {
+          action: "forward-left"
         });
       });
       $(".top-center").on("mouseenter", function() {
-        return socket.emit("forward", {
-          action: "BEGIN"
-        });
-      });
-      $(".top-center").on("mouseout", function() {
-        return socket.emit("forward", {
-          action: "END"
+        return socket.emit("action", {
+          action: "forward"
         });
       });
       $(".top-right").on("mouseenter", function() {
-        return socket.emit("forward-right", {
-          action: "BEGIN"
-        });
-      });
-      $(".top-right").on("mouseout", function() {
-        return socket.emit("forward-right", {
-          action: "END"
+        return socket.emit("action", {
+          action: "forward-right"
         });
       });
       $(".bottom-left").on("mouseenter", function() {
-        return socket.emit("backward-left", {
-          action: "BEGIN"
-        });
-      });
-      $(".bottom-left").on("mouseout", function() {
-        return socket.emit("backward-left", {
-          action: "END"
+        return socket.emit("action", {
+          action: "backward-left"
         });
       });
       $(".bottom-center").on("mouseenter", function() {
-        return socket.emit("backward", {
-          action: "BEGIN"
+        return socket.emit("action", {
+          action: "backward"
         });
       });
-      $(".bottom-center").on("mouseout", function() {
-        return socket.emit("backward", {
-          action: "END"
-        });
-      });
-      $(".bottom-right").on("mouseenter", function() {
-        return socket.emit("backward-right", {
-          action: "BEGIN"
-        });
-      });
-      return $(".bottom-right").on("mouseout", function() {
-        return socket.emit("backward-right", {
-          action: "END"
+      return $(".bottom-right").on("mouseenter", function() {
+        return socket.emit("action", {
+          action: "backward-right"
         });
       });
     };

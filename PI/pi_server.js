@@ -24,38 +24,23 @@ socket.on("connect", function (message) {
   });
 });
 
-socket.on("forward", function(e) {
-  if (e.action === "BEGIN") {action = 1}
-  if (e.action === "END") {action = 0}
-  gpio.write(11, action)
-});
-
-socket.on("forward-right", function(e) {
-  if (e.action === "BEGIN") {action = 1}
-  if (e.action === "END") {action = 0}
-  gpio.write(12, action)
-});
-
-socket.on("backward-right", function(e) {
-  if (e.action === "BEGIN") {action = 1}
-  if (e.action === "END") {action = 0}
-  gpio.write(13, action)
-});
-
-socket.on("forward-left", function(e) {
-  if (e.action === "BEGIN") {action = 1}
-  if (e.action === "END") {action = 0}
-  gpio.write(18, action)
-});
-
-socket.on("backward", function(e) {
-  if (e.action === "BEGIN") {action = 1}
-  if (e.action === "END") {action = 0}
-  gpio.write(15, action)
-});
-
-socket.on("backward-left", function(e) {
-  if (e.action === "BEGIN") {action = 1}
-  if (e.action === "END") {action = 0}
-  gpio.write(16, action)
+socket.on("action", function(e) {
+  if (e.action === "forward") {
+    gpio.write(11, action)
+  }
+  if (e.action === "forward-right") {
+    gpio.write(12, action)
+  }
+  if (e.action === "backward-right") {
+    gpio.write(13, action)
+  }
+  if (e.action === "forward-left") {
+    gpio.write(18, action)
+  }
+  if (e.action === "backward") {
+    gpio.write(15, action)
+  }
+  if (e.action === "backward-left") {
+    gpio.write(16, action)
+  }
 });
