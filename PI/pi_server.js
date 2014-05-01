@@ -2,6 +2,8 @@ var io = require("socket.io-client")
 var socket = io.connect("http://vast-cove-8394.herokuapp.com");
 var gpio = require("pi-gpio")
 var activePort = null
+var lastActivePort = null
+
 socket.on("connect", function (message) {
   console.log("Connected to server.", message);
   gpio.open(11, "output", function(err) {
